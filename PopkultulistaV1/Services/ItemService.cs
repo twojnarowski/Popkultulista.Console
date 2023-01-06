@@ -7,23 +7,43 @@ public class ItemService
 {
     private static List<Item> _items = new List<Item>();
 
-    public void Add(string? name, int type)
+    public void AddItem(string? name, int itemType)
     {
-        Item item = new() { Name = name, ItemType = (ItemType)type, FomoScore = 0, Id = GenerateId() };
-        _items.Add(item);
+        if (Enum.IsDefined(typeof(ItemType), itemType))
+        {
+            if (name.Length > 0)
+            {
+                Item item = new() { Name = name, ItemType = (ItemType)itemType, FomoScore = 0, Id = GenerateId() };
+                _items.Add(item);
+                Console.WriteLine("Dodano pozycję!");
+            }
+            else
+            {
+                Console.WriteLine("Nie podano nazwy!");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Podano błędny typ!");
+        }
     }
 
-    public IEnumerable<Item> Browse()
+    public IEnumerable<Item> BrowseItems()
     {
         return _items;
     }
 
-    public void Remove(int chosenId)
+    public void RemoveItem(int chosenId)
     {
         if (_items.Any(x => x.Id == chosenId))
         {
             Item item = _items.Single(x => x.Id == chosenId);
             _items.Remove(item);
+            Console.WriteLine("Usunięto pozycję!");
+        }
+        else
+        {
+            Console.WriteLine("Pozycja z takim ID nie istnieje!");
         }
     }
 
@@ -36,6 +56,7 @@ public class ItemService
         }
         else
         {
+            Console.WriteLine("Podana pozycja nie istnieje!");
             return null;
         }
     }
