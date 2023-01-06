@@ -1,6 +1,6 @@
 ﻿namespace PopkultulistaV1;
 
-internal class Helpers
+public class Helpers
 {
     public enum ItemType
     {

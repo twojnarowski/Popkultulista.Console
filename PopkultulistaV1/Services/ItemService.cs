@@ -3,22 +3,22 @@ using static PopkultulistaV1.Helpers;
 
 namespace PopkultulistaV1.Services;
 
-internal class ItemService
+public class ItemService
 {
     private static List<Item> _items = new List<Item>();
 
-    internal void Add(string? name, int type)
+    public void Add(string? name, int type)
     {
         Item item = new() { Name = name, ItemType = (ItemType)type, FomoScore = 0, Id = GenerateId() };
         _items.Add(item);
     }
 
-    internal IEnumerable<Item> Browse()
+    public IEnumerable<Item> Browse()
     {
         return _items;
     }
 
-    internal void Remove(int chosenId)
+    public void Remove(int chosenId)
     {
         if (_items.Any(x => x.Id == chosenId))
         {
@@ -27,7 +27,7 @@ internal class ItemService
         }
     }
 
-    internal Item Get(int chosenId)
+    public Item GetItem(int chosenId)
     {
         if (_items.Any(x => x.Id == chosenId))
         {
@@ -52,7 +52,7 @@ internal class ItemService
         }
     }
 
-    internal bool IsEmpty()
+    public bool IsEmpty()
     {
         return !_items.Any();
     }

@@ -6,7 +6,7 @@ namespace PopkultulistaV1;
 
 public class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
         ItemService _itemService = new ItemService();
         int chosenOption;
@@ -56,7 +56,7 @@ public class Program
                         Console.WriteLine($"{item.Id} - {item.Name}");
                     }
                     int.TryParse(Console.ReadLine(), out int chosenId);
-                    Item itemToShow = _itemService.Get(chosenId);
+                    Item itemToShow = _itemService.GetItem(chosenId);
                     Console.WriteLine($"Id: {itemToShow.Id}");
                     Console.WriteLine($"Nazwa: {itemToShow.Name}");
                     Console.WriteLine($"FomoScore: {itemToShow.FomoScore}");
