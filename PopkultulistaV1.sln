@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopkultulistaV1", "PopkultulistaV1\PopkultulistaV1.csproj", "{F4F4BAFF-FE22-474E-BF31-DA09A3B6FBAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Popkultulista", "PopkultulistaV1\Popkultulista.csproj", "{F4F4BAFF-FE22-474E-BF31-DA09A3B6FBAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Popkultulista.Core", "Popkultulista.Core\Popkultulista.Core.csproj", "{8CA2DFA6-4CDC-4528-B24E-DE19FA379266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Popkultulista.App", "Popkultulista.App\Popkultulista.App.csproj", "{2A1786EE-857D-4007-A63F-D451F5030942}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{F4F4BAFF-FE22-474E-BF31-DA09A3B6FBAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4F4BAFF-FE22-474E-BF31-DA09A3B6FBAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4F4BAFF-FE22-474E-BF31-DA09A3B6FBAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA2DFA6-4CDC-4528-B24E-DE19FA379266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA2DFA6-4CDC-4528-B24E-DE19FA379266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA2DFA6-4CDC-4528-B24E-DE19FA379266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA2DFA6-4CDC-4528-B24E-DE19FA379266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A1786EE-857D-4007-A63F-D451F5030942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A1786EE-857D-4007-A63F-D451F5030942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A1786EE-857D-4007-A63F-D451F5030942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A1786EE-857D-4007-A63F-D451F5030942}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿namespace PopkultulistaV1;
+﻿namespace Popkultulista.Helpers;
 
 public class Helpers
 {
