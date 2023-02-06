@@ -10,7 +10,7 @@ namespace Popkultulista.App.Managers
 
         private readonly List<string> types = new List<string>();
 
-        public ItemManager(ListItemService itemService)
+        public ItemManager(IService<ListItem> itemService)
         {
             this.itemService = itemService;
             Initialize();

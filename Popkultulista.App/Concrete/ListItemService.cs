@@ -5,4 +5,5 @@ namespace Popkultulista.App;
 
 public class ListItemService : BaseService<ListItem>
 {
+
 }
