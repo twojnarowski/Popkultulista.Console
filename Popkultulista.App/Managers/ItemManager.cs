@@ -1,6 +1,8 @@
-﻿using Popkultulista.App.Abstract;
+﻿using System.Text.Json.Serialization;
+using Popkultulista.App.Abstract;
 using Popkultulista.Core;
 using Popkultulista.Core.Entity;
+using Newtonsoft.Json;
 
 namespace Popkultulista.App.Managers
 {
@@ -22,6 +24,38 @@ namespace Popkultulista.App.Managers
             this.types.Add(nameof(TvShow));
             this.types.Add(nameof(Movie));
             this.types.Add(nameof(Book));
+            LoadProgress();
+        }
+        public void SaveProgress(object sender, EventArgs e)
+        {
+            if (itemService.Items.Count > 0)
+            {
+                Directory.CreateDirectory(@"C:\Temp");
+                File.Create(@"C:\Temp\items.txt").Close();
+                using StreamWriter sw = new StreamWriter(@"C:\Temp\items.txt");
+                using JsonWriter writer = new JsonTextWriter(sw);
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(writer, itemService.Items);
+            }
+        }
+
+        private void LoadProgress()
+        {
+            if(!File.Exists(@"C:\Temp\items.txt"))
+            {
+                return;
+            }
+
+            string jsonString = File.ReadAllText(@"C:\Temp\items.txt");
+            List<ListItem> items = JsonConvert.DeserializeObject<List<ListItem>>(jsonString)!;
+            if (itemService.Items.Count == 0 && items is not null)
+            {
+                foreach(var item in items)
+                {
+                    itemService.Items.Add(item);
+                }
+            }
+
         }
 
         public Guid AddNewItem()

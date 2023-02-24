@@ -1,4 +1,6 @@
-﻿namespace Popkultulista.Helpers;
+﻿using Popkultulista.App.Managers;
+
+namespace Popkultulista.Helpers;
 
 public class Helpers
 {

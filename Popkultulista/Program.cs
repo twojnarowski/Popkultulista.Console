@@ -1,5 +1,6 @@
 ﻿using Popkultulista.App;
 using Popkultulista.App.Managers;
+using Popkultulista.Helpers;
 
 namespace Popkultulista;
 
@@ -8,6 +9,8 @@ public class Program
     public static void Main(string[] args)
     {
         ItemManager itemManager = new(new ListItemService());
+        AppDomain.CurrentDomain.ProcessExit += new EventHandler(itemManager.SaveProgress);
+
         int chosenOption;
         do
         {
@@ -35,6 +38,10 @@ public class Program
                 else if (chosenOption == 3)
                 {
                     itemManager.GetItem();
+                }
+                else if (chosenOption == 0)
+                {
+                    Environment.Exit(0);
                 }
                 else
                 {
